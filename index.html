@@ -3,21 +3,73 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anish Natekar's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Anish Natekar - AI Researcher & Hardware Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--primary-color);
+      }
+      
       .section {
         padding: 100px 0;
       }
+      
       .navbar {
         backdrop-filter: blur(10px);
         background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
+      
       .hero-section {
         min-height: 100vh;
         display: flex;
         align-items: center;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      
+      .profile-image {
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .social-links a {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+      
+      .tech-stack span {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.25rem;
+        background: rgba(52, 152, 219, 0.1);
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+      
+      .project-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      .project-card:hover {
+        transform: translateY(-5px);
       }
     </style>
   </head>
@@ -59,25 +111,75 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h1 class="display-4 mb-4">Anish Natekar</h1>
-            <p class="lead mb-4">[Your professional introduction here]</p>
-            <div class="social-links mb-4">
-              <a href="#" class="me-3"><i class="bi bi-github"></i></a>
-              <a href="#" class="me-3"><i class="bi bi-youtube"></i></a>
-              <a href="#" class="me-3"><i class="bi bi-briefcase"></i></a>
+            <h1 class="display-4 fw-bold mb-4">Anish Natekar</h1>
+            <h2 class="h3 mb-4">Generative AI Researcher & Hardware Engineer</h2>
+            <p class="lead mb-4">
+              I'm a Generative AI Researcher at a leading Indian MNC's Research Division, specializing in building and training models for NLP and CV tasks. With expertise in developing Agentic Systems featuring RAG, Tool Calling, and MultiModality capabilities, I bring innovative solutions to complex AI challenges.
+            </p>
+            <div class="tech-stack mb-4">
+              <span>PyTorch</span>
+              <span>Langchain</span>
+              <span>Lang Graph</span>
+              <span>Pydantic AI</span>
+              <span>N8N</span>
+              <span>PCB Design</span>
+              <span>3D Printing</span>
+              <span>Robotics</span>
             </div>
-            <a href="#" class="btn btn-outline-dark">Download Resume</a>
+            <div class="social-links mb-4">
+              <a href="https://www.linkedin.com/in/anish-natekar-2667b61b0/" target="_blank" class="me-3"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.youtube.com/@anishnatekar7283" target="_blank" class="me-3"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.upwork.com/freelancers/~014b054a6d79bdc8de" target="_blank" class="me-3"><i class="bi bi-briefcase"></i></a>
+              <a href="https://github.com/anish-natekar" target="_blank" class="me-3"><i class="bi bi-github"></i></a>
+            </div>
+            <a href="assets/Anish_Natekar_Resume_latest.pdf" class="btn btn-dark me-3" target="_blank">Download Resume</a>
+            <a href="#contact" class="btn btn-outline-dark">Hire Me ($20/hr)</a>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="assets/anish_ghibli.jpg" alt="Anish Natekar - Ghibli Style Portrait" class="profile-image">
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="section" id="projects">
+    <section class="section bg-light" id="projects">
       <div class="container">
-        <h2 class="text-center mb-5">Projects</h2>
-        <div class="row">
-          <!-- Project cards will go here -->
+        <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">PicoW_Copter</h5>
+                  <p class="card-text">Open-source $25 mini drone project with 50+ GitHub stars. Complete hardware and software documentation available.</p>
+                  <a href="https://github.com/anish-natekar/PicoW_Copter" class="btn btn-sm btn-outline-dark">View Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Aerial Forest Survey AI</h5>
+                  <p class="card-text">Custom YOLO models for automated tree species detection from aerial survey data.</p>
+                  <a href="#" class="btn btn-sm btn-outline-dark">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Agentic AI Systems</h5>
+                  <p class="card-text">Advanced AI systems with RAG, Tool Calling, MCP, and MultiModality capabilities.</p>
+                  <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -87,7 +189,34 @@
       <div class="container">
         <h2 class="text-center mb-5">Research & Experience</h2>
         <div class="row">
-          <!-- Research and experience content will go here -->
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Education</h5>
+                <p class="card-text">
+                  <strong>Indian Institute of Technology Goa</strong><br>
+                  B.Tech in Computer Science and Engineering<br>
+                  • Published two papers in international conferences<br>
+                  • Developed drone-based forest survey systems<br>
+                  • Specialized in AI/ML and Computer Vision
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Professional Experience</h5>
+                <p class="card-text">
+                  <strong>AI Research Division - Indian MNC</strong><br>
+                  • Building and training large-scale NLP and CV models<br>
+                  • Developing agentic systems for task automation<br>
+                  • Expertise in RAG, Tool Calling, and MultiModality<br>
+                  • Hardware prototyping and robotics projects
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -113,34 +242,34 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact">
+    <section class="section bg-light" id="contact">
       <div class="container">
-        <h2 class="text-center mb-5">Contact Me</h2>
+        <h2 class="text-center mb-5">Let's Work Together</h2>
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <form>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Name">
+            <div class="card">
+              <div class="card-body">
+                <p class="text-center mb-4">
+                  Available for freelance projects at $20/hour on Upwork.<br>
+                  Specialized in AI development, robotics, and hardware projects.
+                </p>
+                <div class="d-grid gap-2">
+                  <a href="https://www.upwork.com/freelancers/~014b054a6d79bdc8de" class="btn btn-dark" target="_blank">Hire Me on Upwork</a>
+                  <a href="mailto:your.email@example.com" class="btn btn-outline-dark">Send Email</a>
+                </div>
               </div>
-              <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-              </div>
-              <button type="submit" class="btn btn-dark w-100">Send Message</button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="py-4 text-center">
+    <footer class="py-4 text-center bg-dark text-white">
       <div class="container">
         <p class="mb-0">&copy; 2024 Anish Natekar. All rights reserved.</p>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
