@@ -257,6 +257,45 @@
   }
   .card a.out:hover { text-decoration: underline; }
 
+  .section-lead {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    max-width: 62ch;
+    margin: 0 0 22px;
+  }
+  .section-lead a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .section-lead a:hover { border-color: var(--accent); }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .video-card {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .video-card img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .video-card .vt {
+    font-size: 0.88rem;
+    margin-top: 8px;
+    line-height: 1.35;
+  }
+
+  .video-card:hover .vt { color: var(--accent); }
+  .video-card:hover img { border-color: var(--accent); }
+
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -300,6 +339,7 @@
     .hero { grid-template-columns: 1fr; text-align: left; }
     .hero img { width: 100px; height: 100px; }
     .grid-2 { grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     header.nav nav a { margin-left: 14px; }
     .hero h1 { font-size: 2.1rem; }
@@ -316,6 +356,7 @@
       <a href="#experience">Experience</a>
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
+      <a href="#videos">Videos</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -465,6 +506,48 @@
         <p>A documented build of an affordable, scratch-built radio-controlled plane in India — design decisions, materials, and flight testing.</p>
         <a class="out" href="https://anish-natekar.github.io/RC_Plane_Scratch_Build_In_India/" target="_blank">Read the build log →</a>
       </div>
+
+    </div>
+  </section>
+
+  <section id="videos">
+    <h2 class="h">Videos</h2>
+    <p class="section-lead">
+      From my college years building and flying drones and RC planes — build logs, flight tests, and
+      simulation work from my
+      <a href="https://www.youtube.com/@anishnatekar7283" target="_blank">YouTube channel</a> (197 subscribers).
+    </p>
+    <div class="video-grid">
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=tu2c7LCsRs8" target="_blank">
+        <img src="https://img.youtube.com/vi/tu2c7LCsRs8/hqdefault.jpg" alt="First FPV flight test of PicoW Copter" loading="lazy">
+        <div class="vt">First FPV flight test of PicoW Copter</div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=Lg3Js6S3xKE" target="_blank">
+        <img src="https://img.youtube.com/vi/Lg3Js6S3xKE/hqdefault.jpg" alt="Made an Android app to control PicoW Copter and receive FPV video" loading="lazy">
+        <div class="vt">Android app to control PicoW Copter + FPV video</div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=aeT8AKTrWI0" target="_blank">
+        <img src="https://img.youtube.com/vi/aeT8AKTrWI0/hqdefault.jpg" alt="DIY RC plane flight test journey compilation" loading="lazy">
+        <div class="vt">DIY RC plane flight-test journey compilation</div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=MVHYnvOxsqk" target="_blank">
+        <img src="https://img.youtube.com/vi/MVHYnvOxsqk/hqdefault.jpg" alt="GPS autonomous waypoint survey mission, Pixhawk and Raspberry Pi drone" loading="lazy">
+        <div class="vt">GPS autonomous waypoint survey — Pixhawk + Raspberry Pi drone</div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=MMIb9IrTuvA" target="_blank">
+        <img src="https://img.youtube.com/vi/MMIb9IrTuvA/hqdefault.jpg" alt="DIY Arduino Uno Quadcopter with DIY NodeMCU wifi receiver and ESP32 FPV camera" loading="lazy">
+        <div class="vt">DIY Arduino Uno quadcopter, NodeMCU receiver &amp; ESP32 FPV camera</div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=FqtTfzLlnOE" target="_blank">
+        <img src="https://img.youtube.com/vi/FqtTfzLlnOE/hqdefault.jpg" alt="SITL, Gazebo, ROS1, PX4 short version" loading="lazy">
+        <div class="vt">SITL simulation — Gazebo, ROS1, PX4</div>
+      </a>
 
     </div>
   </section>
