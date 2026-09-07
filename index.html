@@ -360,19 +360,156 @@
   .video-card:hover .vt { color: var(--accent); }
   .video-card:hover img { border-color: var(--accent); }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+  .skill-tree, .skill-tree ul, .skill-tree li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
   }
 
-  .skills-grid h4 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    margin: 0 0 10px;
+  .skill-tree {
+    text-align: center;
+    padding-bottom: 8px;
+    width: 100%;
+  }
+
+  .skill-tree, .skill-tree ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .skill-tree ul {
+    padding-top: 28px;
+  }
+
+  .skill-tree > ul.domains { align-items: flex-start; }
+  .skill-tree > ul.domains > li { flex: 1 1 0; min-width: 270px; }
+
+  .skill-tree li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 14px 0 14px;
+  }
+
+  .skill-tree > ul.domains > li { align-items: stretch; text-align: center; }
+  .skill-tree > ul.domains > li > .domain-node { align-self: center; }
+
+  /* Category stack: a left-aligned vertical timeline under each domain,
+     since domains vary too much in leaf-count to branch further as siblings. */
+  .skill-tree ul.categories {
+    display: block;
+    width: 100%;
+    padding-top: 22px;
+    text-align: left;
+  }
+  .skill-tree ul.categories::before { display: none; }
+  .skill-tree ul.categories > li {
+    display: block;
+    padding: 0 0 22px 20px;
+    margin-left: 14px;
+    border-left: 2px solid var(--line);
+    text-align: left;
+  }
+  .skill-tree ul.categories > li:last-child {
+    padding-bottom: 0;
+    border-left-color: transparent;
+  }
+  .skill-tree ul.categories > li::before,
+  .skill-tree ul.categories > li::after { display: none; }
+
+  .skill-tree li::before,
+  .skill-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .skill-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid var(--line);
+  }
+  .skill-tree li:only-child::after,
+  .skill-tree li:only-child::before { display: none; }
+  .skill-tree li:only-child { padding-top: 0; }
+  .skill-tree li:first-child::before,
+  .skill-tree li:last-child::after { border: 0 none; }
+  .skill-tree li:last-child::before {
+    border-right: 1px solid var(--line);
+    border-radius: 0 6px 0 0;
+  }
+  .skill-tree li:first-child::after { border-radius: 6px 0 0 0; }
+  .skill-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid var(--line);
+    width: 0;
+    height: 28px;
+  }
+
+  .root-node span {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+  }
+
+  .domain-node {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+  }
+
+  .cat-node {
+    display: inline-block;
     font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink-soft);
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg-alt);
+    margin-bottom: 10px;
+  }
+
+  .skill-tree .categories > li > .tags {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 780px) {
+    .skill-tree { overflow-x: visible; text-align: left; }
+    .skill-tree, .skill-tree ul { display: block; }
+    .skill-tree ul { padding-top: 0; }
+    .skill-tree li {
+      display: block;
+      padding: 0 0 0 18px;
+      text-align: left;
+    }
+    .skill-tree li::before, .skill-tree li::after, .skill-tree ul::before { display: none; }
+    .root-node { margin-bottom: 6px; }
+    .domain-node { margin: 18px 0 8px; }
+    .cat-node { margin: 14px 0 6px; }
+    .skill-tree ul.categories { padding-top: 0; }
+    .skill-tree ul.categories > li { padding: 0 0 18px 16px; margin-left: 4px; }
+    .skill-tree .categories > li > .tags { max-width: none; justify-content: flex-start; }
   }
 
   ul.plain {
@@ -404,7 +541,6 @@
     .hero img { width: 100px; height: 100px; }
     .grid-2 { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
     header.nav nav a { margin-left: 14px; }
     .hero h1 { font-size: 2.1rem; }
   }
@@ -671,30 +807,94 @@
 
   <section id="skills">
     <h2 class="h">Skills</h2>
-    <div class="skills-grid">
-      <div>
-        <h4>AI Systems &amp; LLM Engineering</h4>
-        <div class="tags">
-          <span>Multi-Agent Systems</span><span>Prompt Optimization</span><span>RAG</span>
-          <span>Model Benchmarking</span><span>LoRA/QLoRA</span><span>DSPy</span>
-          <span>LangChain</span><span>Autogen</span><span>MCP</span><span>ReAct Agents</span>
-        </div>
-      </div>
-      <div>
-        <h4>ML Frameworks &amp; Tooling</h4>
-        <div class="tags">
-          <span>PyTorch</span><span>Hugging Face Transformers</span><span>PEFT</span>
-          <span>YOLO</span><span>OpenCV</span><span>ChromaDB</span><span>Vector DBs</span>
-        </div>
-      </div>
-      <div>
-        <h4>Programming &amp; Infrastructure</h4>
-        <div class="tags">
-          <span>Python</span><span>C/C++</span><span>SQL</span><span>Linux</span>
-          <span>Docker</span><span>Azure</span><span>REST APIs</span><span>Git</span>
-          <span>System Verilog</span><span>Flutter/Android</span><span>IoT</span>
-        </div>
-      </div>
+    <div class="skill-tree">
+      <div class="root-node"><span>Skills</span></div>
+      <ul class="domains">
+        <li>
+          <div class="domain-node">AI &amp; Machine Learning</div>
+          <ul class="categories">
+            <li>
+              <div class="cat-node">Agentic Systems &amp; LLM Engineering</div>
+              <div class="tags">
+                <span>Multi-Agent Systems</span><span>Prompt Optimization</span><span>RAG</span>
+                <span>Model Benchmarking</span><span>LoRA/QLoRA</span><span>DSPy</span>
+                <span>LangChain</span><span>Autogen</span><span>MCP</span><span>ReAct Agents</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Computer Vision &amp; Deep Learning</div>
+              <div class="tags">
+                <span>PyTorch</span><span>Hugging Face Transformers</span><span>PEFT</span>
+                <span>YOLOv8</span><span>OpenCV</span><span>Efficient Channel Attention</span>
+                <span>On-Device Inference</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Data &amp; Retrieval</div>
+              <div class="tags">
+                <span>ChromaDB</span><span>Vector DBs</span><span>Semantic Search</span>
+                <span>Embedding Pipelines</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="domain-node">Software &amp; Infrastructure</div>
+          <ul class="categories">
+            <li>
+              <div class="cat-node">Languages</div>
+              <div class="tags">
+                <span>Python</span><span>C/C++</span><span>SQL</span>
+                <span>VHDL</span><span>Verilog</span><span>SystemVerilog</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Cloud &amp; DevOps</div>
+              <div class="tags">
+                <span>Docker</span><span>Azure</span><span>REST APIs</span><span>Git</span>
+                <span>Linux</span><span>Perforce</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Apps &amp; Mobile</div>
+              <div class="tags">
+                <span>Flutter/Android</span><span>IoT</span><span>UDP Networking</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="domain-node">Robotics &amp; Simulation</div>
+          <ul class="categories">
+            <li>
+              <div class="cat-node">Embedded &amp; Firmware</div>
+              <div class="tags">
+                <span>Raspberry Pi Pico W</span><span>ESP32</span><span>NodeMCU</span><span>Arduino</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Design &amp; Fabrication</div>
+              <div class="tags">
+                <span>PCB Design</span><span>3D Printing</span><span>Open-Source Hardware</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">UAV &amp; Flight Systems</div>
+              <div class="tags">
+                <span>Pixhawk/PX4</span><span>GPS Waypoint Navigation</span><span>FPV Systems</span>
+                <span>Drones/Quadcopters</span><span>RC Aircraft</span>
+              </div>
+            </li>
+            <li>
+              <div class="cat-node">Simulation</div>
+              <div class="tags">
+                <span>Gazebo</span><span>ROS1</span><span>SITL</span><span>SimPy</span>
+                <span>SystemC</span><span>Discrete-Event Simulation</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 
