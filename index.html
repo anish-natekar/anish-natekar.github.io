@@ -210,6 +210,37 @@
 
   .entry ul li { margin-bottom: 4px; }
 
+  .timeline {
+    position: relative;
+    padding-left: 26px;
+    border-left: 2px solid var(--line);
+  }
+
+  .timeline .t-item {
+    position: relative;
+    margin-bottom: 26px;
+  }
+  .timeline .t-item:last-child { margin-bottom: 0; }
+
+  .timeline .t-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline .t-item ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: var(--ink-soft);
+  }
+  .timeline .t-item ul li { margin-bottom: 4px; }
+
   .pub {
     margin-bottom: 22px;
   }
@@ -367,11 +398,12 @@
   <section class="hero" id="top">
     <div>
       <h1>Anish Natekar</h1>
-      <p class="role">Research Engineer, Generative AI — TCS Research (TRDDC)</p>
+      <p class="role">Backend + AI Engineer — GreenSage AI</p>
       <p class="lead">
-        I build multi-agent LLM systems and agentic AI pipelines — hybrid RAG, MCP-based tool calling,
-        automated prompt optimization, and LoRA/QLoRA fine-tuning. Outside work I design and build
-        drones and robotics from the PCB up.
+        I build the backend, app, and AI workflows behind GreenSage AI's Energy Audit product — cloud
+        infrastructure, application logic, and LLM-based automation end to end. Previously I was a
+        Research Engineer at TCS Research, building multi-agent LLM systems and hybrid RAG pipelines.
+        Outside work I design and build drones and robotics from the PCB up.
       </p>
       <div class="links">
         <a class="primary" href="assets/Anish_Natekar_Resume_latest.pdf" target="_blank">Resume</a>
@@ -386,12 +418,12 @@
   <section id="about">
     <h2 class="h">About</h2>
     <p>
-      I'm a Research Engineer in the Generative AI group at TCS Research (TRDDC), Pune, where I architect
-      multi-agent LLM systems for multimedia analysis and hybrid RAG pipelines combining vector search,
-      MCP-based tool calling, and evaluation feedback loops. I did my B.Tech in Computer Science at
-      IIT Goa, and before this role spent time at Siemens EDA working on compiler internals for the
-      Questa HDL simulator. I also take on select freelance Gen AI engineering work for international
-      clients (CV, NLP, agentic automation).
+      I'm a Backend + AI Engineer at GreenSage AI, building their Energy Audit AI product across the
+      stack — cloud backend, application layer, and LLM-based AI workflows. Before this I was a Research
+      Engineer in the Generative AI group at TCS Research (TRDDC), Pune, where I architected multi-agent
+      LLM systems for multimedia analysis and hybrid RAG pipelines combining vector search, MCP-based
+      tool calling, and evaluation feedback loops. I did my B.Tech in Computer Science at IIT Goa, and
+      before that spent time at Siemens EDA working on compiler internals for the Questa HDL simulator.
     </p>
     <div class="tags">
       <span>Agentic AI Systems</span>
@@ -405,39 +437,73 @@
   <section id="experience">
     <h2 class="h">Experience</h2>
 
-    <div class="entry">
-      <div class="entry-head">
-        <span class="title">Research Engineer, Generative AI <span class="org">— TCS Research (TRDDC), Pune</span></span>
-        <span class="when">Aug 2024 – Present</span>
-      </div>
-      <ul>
-        <li>Architected multi-agent LLM systems for multimedia analysis using DSPy-based structured reasoning pipelines.</li>
-        <li>Designed hybrid RAG systems integrating vector search, MCP-based tool calling, and evaluation feedback loops.</li>
-        <li>Built automated prompt optimization and benchmarking frameworks to improve reasoning reliability.</li>
-        <li>Conducted LoRA/QLoRA fine-tuning experiments on domain-specific datasets.</li>
-      </ul>
-    </div>
+    <div class="timeline">
 
-    <div class="entry">
-      <div class="entry-head">
-        <span class="title">R&amp;D Intern <span class="org">— Siemens EDA (Mentor Graphics)</span></span>
-        <span class="when">Jul 2023 – Dec 2023</span>
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">Backend + AI Engineer <span class="org">— GreenSage AI</span></span>
+          <span class="when">May 2026 – Present</span>
+        </div>
+        <ul>
+          <li>Building GreenSage AI's Energy Audit AI product across the stack — cloud backend, application layer, and LLM-based AI workflows.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Contributed to the compiler optimization stage (vopt) in the Questa HDL simulator.</li>
-        <li>Enhanced X-value propagation logic and built regression tests in a large-scale C codebase.</li>
-        <li>Worked in a Linux (CentOS) environment using Perforce Helix.</li>
-      </ul>
-    </div>
 
-    <div class="entry">
-      <div class="entry-head">
-        <span class="title">Education <span class="org">— B.Tech, Computer Science &amp; Engineering, IIT Goa</span></span>
-        <span class="when">2020 – 2024</span>
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">Systems Engineer, Researcher <span class="org">— TCS Research (TRDDC), Pune</span></span>
+          <span class="when">Aug 2024 – May 2026</span>
+        </div>
+        <ul>
+          <li>Architected multi-agent LLM systems for multimedia analysis using DSPy-based structured reasoning pipelines.</li>
+          <li>Designed hybrid RAG systems integrating vector search, MCP-based tool calling, and evaluation feedback loops.</li>
+          <li>Built automated prompt optimization and benchmarking frameworks to improve reasoning reliability.</li>
+          <li>Conducted LoRA/QLoRA fine-tuning experiments on domain-specific datasets.</li>
+        </ul>
       </div>
-      <ul>
-        <li>CGPA 8.35/10. Coursework: Machine Learning, Artificial Intelligence, Deep Learning, Operating Systems, Computer Networks.</li>
-      </ul>
+
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">R&amp;D Intern <span class="org">— Siemens EDA (Mentor Graphics)</span></span>
+          <span class="when">Jul 2023 – Dec 2023</span>
+        </div>
+        <ul>
+          <li>Contributed to the compiler optimization stage (vopt) in the Questa HDL simulator.</li>
+          <li>Enhanced X-value propagation logic and built regression tests in a large-scale C codebase.</li>
+          <li>Worked in a Linux (CentOS) environment using Perforce Helix.</li>
+        </ul>
+      </div>
+
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">Teaching Assistant, Discrete Event Simulation <span class="org">— IIT Goa</span></span>
+          <span class="when">Sep 2022</span>
+        </div>
+        <ul>
+          <li>TA'd a 2-week industrial training course on discrete-event simulation (SimPy) under Prof. Neha Karanjkar — wrote assignments, verified solutions, and graded submissions for enrolled company employees.</li>
+        </ul>
+      </div>
+
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">HPC Research Intern <span class="org">— NSM India (HiPC)</span></span>
+          <span class="when">Jun 2022 – Aug 2022</span>
+        </div>
+        <ul>
+          <li>Completed a High-Performance Computing &amp; AI research internship at the NSM India Nodal Center for Training in HPC &amp; AI.</li>
+        </ul>
+      </div>
+
+      <div class="t-item">
+        <div class="entry-head">
+          <span class="title">Education <span class="org">— B.Tech, Computer Science &amp; Engineering, IIT Goa</span></span>
+          <span class="when">2020 – 2024</span>
+        </div>
+        <ul>
+          <li>CGPA 8.35/10. Coursework: Machine Learning, Artificial Intelligence, Deep Learning, Operating Systems, Computer Networks.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -584,7 +650,6 @@
   <section id="more">
     <h2 class="h">Positions &amp; Achievements</h2>
     <ul class="plain">
-      <li><strong>Freelance Gen AI Engineer</strong> — delivered custom AI (CV, NLP, Gen AI) automation for international clients, $1000+ earned, 5-star rating. <span class="when">2026 – Present</span></li>
       <li><strong>Head, E&amp;R Robotics Club, IIT Goa</strong> — built line-follower robots, RC planes, and sub-100g swarm drones. <span class="when">2022 – 2023</span></li>
       <li><strong>Student Representative</strong> — represented the Batch of 2020 to the IIT Goa Undergraduate Committee. <span class="when">2020 – 2024</span></li>
       <li><strong>JEE Advanced AIR 3858</strong>; JEE Mains 99.2 percentile. <span class="when">2020</span></li>
