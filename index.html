@@ -211,11 +211,14 @@
   .entry ul li { margin-bottom: 4px; }
 
   .pub {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .pub:last-child { margin-bottom: 0; }
-  .pub .t { font-weight: 600; }
+  .pub .t { font-weight: 600; text-decoration: none; }
+  .pub .t.linked { border-bottom: 1px solid var(--line); }
+  .pub .t.linked:hover { color: var(--accent); border-color: var(--accent); }
   .pub .meta { color: var(--ink-soft); font-size: 0.9rem; margin-top: 2px; }
+  .pub .desc { color: var(--ink-soft); font-size: 0.92rem; margin-top: 6px; max-width: 62ch; }
 
   .grid-2 {
     display: grid;
@@ -401,24 +404,29 @@
     <h2 class="h">Publications</h2>
 
     <div class="pub">
-      <div class="t">MemGrad: Memory-Guided Optimization of Agentic Software Development via Abstracted Textual Gradients</div>
-      <div class="meta">ICLR Workshop 2026 — First Author</div>
+      <a class="t linked" href="https://openreview.net/forum?id=GeaPE7iw1V" target="_blank">MemGrad: A Memory-Guided Optimization of Agentic Software Development via Abstracted Textual Gradients</a>
+      <div class="meta">MemAgents Workshop, ICLR 2026 — First Author</div>
+      <p class="desc">ICLR's workshop on memory for LLM-based agentic systems. Proposes a retrospective–prospective memory architecture that turns multi-trajectory agent feedback into textual gradients, improving multi-agent software-development performance without fine-tuning.</p>
     </div>
     <div class="pub">
-      <div class="t">Democratic ICAI: Debating Our Way to Steering Principles from Preferences</div>
-      <div class="meta">ICLR Workshop 2026 — Second Author</div>
+      <a class="t linked" href="https://openreview.net/forum?id=LpRseY4J0J" target="_blank">Democratic ICAI: Debating Our Way to Steering Principles from Preferences</a>
+      <div class="meta">HCAIR Workshop, ICLR 2026 — Second Author</div>
+      <p class="desc">ICLR's workshop on Human Cognition to AI Reasoning. Extends Inverse Constitutional AI with structured multi-persona debate to extract richer, more interpretable alignment principles from human preference data.</p>
     </div>
     <div class="pub">
-      <div class="t">HyP-ECA: Attention for Aerial Tree Crown Delineation and Species Classification</div>
-      <div class="meta">CVIP 2024 — First Author</div>
+      <a class="t linked" href="https://dblp.org/rec/conf/cvip/NatekarGVPG24" target="_blank">HyP-ECA: Attention for Aerial Tree Crown Delineation and Species Classification</a>
+      <div class="meta">CVIP 2024 (9th Intl. Conference on Computer Vision & Image Processing) — First Author</div>
+      <p class="desc">Springer CCIS proceedings. Introduces a hybrid pooling efficient-channel-attention block on YOLOv8 for small-object detection, plus the MTAD dataset, validated on real UAV flights and SITL simulation.</p>
     </div>
     <div class="pub">
       <div class="t">UAV Based Aerial Object Imagery for Animal Ecology</div>
-      <div class="meta">IEEE ETAAV 2025 — Second Author</div>
+      <div class="meta">IEEE ETAAV 2025 (Intl. Conference on Emerging Technology in Autonomous Aerial Vehicles) — Second Author</div>
+      <p class="desc">IEEE-sponsored conference under India's MeitY SwaYaan UAS program, IISc Bangalore. Contributes WildYOLO, a YOLO + efficient-channel-attention model for wildlife detection, evaluated on WAID (mAP@50: 94.2%) and deployed on a Pixhawk-integrated UAV.</p>
     </div>
     <div class="pub">
-      <div class="t">Sitar V2: Parallel Simulation of Networked Synchronous Discrete-Event Systems</div>
-      <div class="meta">Winter Simulation Conference 2024 — Co-Author</div>
+      <a class="t linked" href="https://ieeexplore.ieee.org/document/10838747/" target="_blank">Sitar V2: Parallel Simulation of Networked Synchronous Discrete-Event Systems</a>
+      <div class="meta">Winter Simulation Conference (WSC) 2024 — Co-Author</div>
+      <p class="desc">The flagship INFORMS/IEEE simulation conference. Modernizes the Sitar parallel discrete-event simulation framework and benchmarks it against SystemC and SimPy.</p>
     </div>
   </section>
 
