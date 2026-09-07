@@ -1,275 +1,523 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anish Natekar - AI Researcher & Hardware Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-      :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #34495e;
-        --accent-color: #3498db;
-      }
-      
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--primary-color);
-      }
-      
-      .section {
-        padding: 100px 0;
-      }
-      
-      .navbar {
-        backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      
-      .hero-section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      }
-      
-      .profile-image {
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        max-width: 100%;
-        height: auto;
-      }
-      
-      .social-links a {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        transition: color 0.3s ease;
-      }
-      
-      .social-links a:hover {
-        color: var(--accent-color);
-      }
-      
-      .tech-stack span {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        margin: 0.25rem;
-        background: rgba(52, 152, 219, 0.1);
-        border-radius: 20px;
-        font-size: 0.9rem;
-      }
-      
-      .project-card {
-        border-radius: 15px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      }
-      
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Anish Natekar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#research">Research</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#blog">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#certificates">Certificates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anish Natekar</title>
+<meta name="description" content="Anish Natekar — Research Engineer, Generative AI at TCS Research. Multi-agent LLM systems, agentic AI, robotics & drones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdfdfc;
+    --bg-alt: #f6f5f2;
+    --ink: #1b1b18;
+    --ink-soft: #55534d;
+    --line: #e4e2db;
+    --accent: #b5502e;
+    --max: 780px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(253,253,252,0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  header.nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    max-width: 920px;
+  }
+
+  header.nav .brand {
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  header.nav nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-left: 22px;
+  }
+
+  header.nav nav a:hover { color: var(--accent); }
+
+  main { max-width: 920px; margin: 0 auto; }
+
+  section {
+    padding: 64px 28px;
+    border-bottom: 1px solid var(--line);
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .hero {
+    max-width: 920px;
+    padding: 72px 28px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-family: 'Newsreader', serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero .role {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 0 18px;
+  }
+
+  .hero p.lead {
+    max-width: 52ch;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+
+  .hero img {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    transition: border-color .15s, color .15s;
+  }
+
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .links a.primary {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+
+  .links a.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  h2.h {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .tags span {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+
+  .entry {
+    margin-bottom: 30px;
+  }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .entry-head .title {
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+
+  .entry-head .org {
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+
+  .entry-head .when {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .entry ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: var(--ink-soft);
+  }
+
+  .entry ul li { margin-bottom: 4px; }
+
+  .pub {
+    margin-bottom: 20px;
+  }
+  .pub:last-child { margin-bottom: 0; }
+  .pub .t { font-weight: 600; }
+  .pub .meta { color: var(--ink-soft); font-size: 0.9rem; margin-top: 2px; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px;
+    background: var(--bg-alt);
+  }
+
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+  }
+
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0 0 12px;
+  }
+
+  .card .meta {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .card a.out {
+    font-size: 0.88rem;
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .card a.out:hover { text-decoration: underline; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .skills-grid h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  ul.plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  ul.plain li { margin-bottom: 6px; }
+  ul.plain .when { color: var(--ink-soft); font-size: 0.85rem; }
+
+  footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 32px 28px 56px;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; text-align: left; }
+    .hero img { width: 100px; height: 100px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    header.nav nav a { margin-left: 14px; }
+    .hero h1 { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Anish Natekar</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h1 class="display-4 fw-bold mb-4">Anish Natekar</h1>
-            <h2 class="h3 mb-4">Generative AI Researcher & Hardware Engineer</h2>
-            <p class="lead mb-4">
-              I'm a Generative AI Researcher at a leading Indian MNC's Research Division, specializing in building and training models for NLP and CV tasks. With expertise in developing Agentic Systems featuring RAG, Tool Calling, and MultiModality capabilities, I bring innovative solutions to complex AI challenges.
-            </p>
-            <div class="tech-stack mb-4">
-              <span>PyTorch</span>
-              <span>Langchain</span>
-              <span>Lang Graph</span>
-              <span>Pydantic AI</span>
-              <span>N8N</span>
-              <span>PCB Design</span>
-              <span>3D Printing</span>
-              <span>Robotics</span>
-            </div>
-            <div class="social-links mb-4">
-              <a href="https://www.linkedin.com/in/anish-natekar-2667b61b0/" target="_blank" class="me-3"><i class="bi bi-linkedin"></i></a>
-              <a href="https://www.youtube.com/@anishnatekar7283" target="_blank" class="me-3"><i class="bi bi-youtube"></i></a>
-              <a href="https://www.upwork.com/freelancers/~014b054a6d79bdc8de" target="_blank" class="me-3"><i class="bi bi-briefcase"></i></a>
-              <a href="https://github.com/anish-natekar" target="_blank" class="me-3"><i class="bi bi-github"></i></a>
-            </div>
-            <a href="assets/Anish_Natekar_Resume_latest.pdf" class="btn btn-dark me-3" target="_blank">Download Resume</a>
-            <a href="#contact" class="btn btn-outline-dark">Hire Me ($20/hr)</a>
-          </div>
-          <div class="col-lg-6 text-center">
-            <img src="assets/anish_ghibli.jpg" alt="Anish Natekar - Ghibli Style Portrait" class="profile-image">
-          </div>
+<main>
+
+  <section class="hero" id="top">
+    <div>
+      <h1>Anish Natekar</h1>
+      <p class="role">Research Engineer, Generative AI — TCS Research (TRDDC)</p>
+      <p class="lead">
+        I build multi-agent LLM systems and agentic AI pipelines — hybrid RAG, MCP-based tool calling,
+        automated prompt optimization, and LoRA/QLoRA fine-tuning. Outside work I design and build
+        drones and robotics from the PCB up.
+      </p>
+      <div class="links">
+        <a class="primary" href="assets/Anish_Natekar_Resume_latest.pdf" target="_blank">Resume</a>
+        <a href="https://www.linkedin.com/in/anish-natekar-2667b61b0/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/anish-natekar" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/@anishnatekar7283" target="_blank">YouTube</a>
+      </div>
+    </div>
+    <img src="assets/anish_real.jpg" alt="Anish Natekar">
+  </section>
+
+  <section id="about">
+    <h2 class="h">About</h2>
+    <p>
+      I'm a Research Engineer in the Generative AI group at TCS Research (TRDDC), Pune, where I architect
+      multi-agent LLM systems for multimedia analysis and hybrid RAG pipelines combining vector search,
+      MCP-based tool calling, and evaluation feedback loops. I did my B.Tech in Computer Science at
+      IIT Goa, and before this role spent time at Siemens EDA working on compiler internals for the
+      Questa HDL simulator. I also take on select freelance Gen AI engineering work for international
+      clients (CV, NLP, agentic automation).
+    </p>
+    <div class="tags">
+      <span>Agentic AI Systems</span>
+      <span>Robotics &amp; Drones</span>
+      <span>Open-Source Hardware</span>
+      <span>PCB Design &amp; 3D Printing</span>
+      <span>RC Aircraft</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="h">Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="title">Research Engineer, Generative AI <span class="org">— TCS Research (TRDDC), Pune</span></span>
+        <span class="when">Aug 2024 – Present</span>
+      </div>
+      <ul>
+        <li>Architected multi-agent LLM systems for multimedia analysis using DSPy-based structured reasoning pipelines.</li>
+        <li>Designed hybrid RAG systems integrating vector search, MCP-based tool calling, and evaluation feedback loops.</li>
+        <li>Built automated prompt optimization and benchmarking frameworks to improve reasoning reliability.</li>
+        <li>Conducted LoRA/QLoRA fine-tuning experiments on domain-specific datasets.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="title">R&amp;D Intern <span class="org">— Siemens EDA (Mentor Graphics)</span></span>
+        <span class="when">Jul 2023 – Dec 2023</span>
+      </div>
+      <ul>
+        <li>Contributed to the compiler optimization stage (vopt) in the Questa HDL simulator.</li>
+        <li>Enhanced X-value propagation logic and built regression tests in a large-scale C codebase.</li>
+        <li>Worked in a Linux (CentOS) environment using Perforce Helix.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="title">Education <span class="org">— B.Tech, Computer Science &amp; Engineering, IIT Goa</span></span>
+        <span class="when">2020 – 2024</span>
+      </div>
+      <ul>
+        <li>CGPA 8.35/10. Coursework: Machine Learning, Artificial Intelligence, Deep Learning, Operating Systems, Computer Networks.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2 class="h">Publications</h2>
+
+    <div class="pub">
+      <div class="t">MemGrad: Memory-Guided Optimization of Agentic Software Development via Abstracted Textual Gradients</div>
+      <div class="meta">ICLR Workshop 2026 — First Author</div>
+    </div>
+    <div class="pub">
+      <div class="t">Democratic ICAI: Debating Our Way to Steering Principles from Preferences</div>
+      <div class="meta">ICLR Workshop 2026 — Second Author</div>
+    </div>
+    <div class="pub">
+      <div class="t">HyP-ECA: Attention for Aerial Tree Crown Delineation and Species Classification</div>
+      <div class="meta">CVIP 2024 — First Author</div>
+    </div>
+    <div class="pub">
+      <div class="t">UAV Based Aerial Object Imagery for Animal Ecology</div>
+      <div class="meta">IEEE ETAAV 2025 — Second Author</div>
+    </div>
+    <div class="pub">
+      <div class="t">Sitar V2: Parallel Simulation of Networked Synchronous Discrete-Event Systems</div>
+      <div class="meta">Winter Simulation Conference 2024 — Co-Author</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="h">Projects</h2>
+    <div class="grid-2">
+
+      <div class="card">
+        <h3>Gallery Search</h3>
+        <div class="meta">On-device AI · Flutter · iOS/Android</div>
+        <p>Fully offline AI-powered photo gallery app — text, image, and face search with semantic and face-similarity clustering, backed by custom on-device embedding and vector indexing.</p>
+        <a class="out" href="https://github.com/anish-natekar/gallery_search_privacy" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>PicoW Copter</h3>
+        <div class="meta">66★ on GitHub · Featured in Tom's Hardware</div>
+        <p>Open-source, sub-100g WiFi-controlled quadcopter — full-stack build with custom PCB, firmware, and a Flutter control app, flown over UDP on a Raspberry Pi Pico W.</p>
+        <a class="out" href="https://github.com/anish-natekar/PicoW_Copter" target="_blank">View on GitHub →</a>
+        &nbsp;·&nbsp;
+        <a class="out" href="https://picow-copter-docs.readthedocs.io/en/latest/" target="_blank">Docs →</a>
+      </div>
+
+      <div class="card">
+        <h3>MetaOS</h3>
+        <div class="meta">Open-source agent framework</div>
+        <p>An open-source agent inspired by natural-language and operating-system concepts — exploring how classic OS abstractions map onto agentic LLM systems.</p>
+        <a class="out" href="https://github.com/anish-natekar/MetaOS" target="_blank">View on GitHub →</a>
+        &nbsp;·&nbsp;
+        <a class="out" href="https://anish-natekar.github.io/MetaOS/" target="_blank">Site →</a>
+      </div>
+
+      <div class="card">
+        <h3>RC Plane, Scratch-Built in India</h3>
+        <div class="meta">Build log / blog</div>
+        <p>A documented build of an affordable, scratch-built radio-controlled plane in India — design decisions, materials, and flight testing.</p>
+        <a class="out" href="https://anish-natekar.github.io/RC_Plane_Scratch_Build_In_India/" target="_blank">Read the build log →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="h">Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <h4>AI Systems &amp; LLM Engineering</h4>
+        <div class="tags">
+          <span>Multi-Agent Systems</span><span>Prompt Optimization</span><span>RAG</span>
+          <span>Model Benchmarking</span><span>LoRA/QLoRA</span><span>DSPy</span>
+          <span>LangChain</span><span>Autogen</span><span>MCP</span><span>ReAct Agents</span>
         </div>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section bg-light" id="projects">
-      <div class="container">
-        <h2 class="text-center mb-5">Featured Projects</h2>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">PicoW_Copter</h5>
-                  <p class="card-text">Open-source $25 mini drone project with 50+ GitHub stars. Complete hardware and software documentation available.</p>
-                  <a href="https://github.com/anish-natekar/PicoW_Copter" class="btn btn-sm btn-outline-dark">View Project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Aerial Forest Survey AI</h5>
-                  <p class="card-text">Custom YOLO models for automated tree species detection from aerial survey data.</p>
-                  <a href="#" class="btn btn-sm btn-outline-dark">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Agentic AI Systems</h5>
-                  <p class="card-text">Advanced AI systems with RAG, Tool Calling, MCP, and MultiModality capabilities.</p>
-                  <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div>
+        <h4>ML Frameworks &amp; Tooling</h4>
+        <div class="tags">
+          <span>PyTorch</span><span>Hugging Face Transformers</span><span>PEFT</span>
+          <span>YOLO</span><span>OpenCV</span><span>ChromaDB</span><span>Vector DBs</span>
         </div>
       </div>
-    </section>
-
-    <!-- Research Section -->
-    <section class="section" id="research">
-      <div class="container">
-        <h2 class="text-center mb-5">Research & Experience</h2>
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Education</h5>
-                <p class="card-text">
-                  <strong>Indian Institute of Technology Goa</strong><br>
-                  B.Tech in Computer Science and Engineering<br>
-                  • Published two papers in international conferences<br>
-                  • Developed drone-based forest survey systems<br>
-                  • Specialized in AI/ML and Computer Vision
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Professional Experience</h5>
-                <p class="card-text">
-                  <strong>AI Research Division - Indian MNC</strong><br>
-                  • Building and training large-scale NLP and CV models<br>
-                  • Developing agentic systems for task automation<br>
-                  • Expertise in RAG, Tool Calling, and MultiModality<br>
-                  • Hardware prototyping and robotics projects
-                </p>
-              </div>
-            </div>
-          </div>
+      <div>
+        <h4>Programming &amp; Infrastructure</h4>
+        <div class="tags">
+          <span>Python</span><span>C/C++</span><span>SQL</span><span>Linux</span>
+          <span>Docker</span><span>Azure</span><span>REST APIs</span><span>Git</span>
+          <span>System Verilog</span><span>Flutter/Android</span><span>IoT</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Blog Section -->
-    <section class="section" id="blog">
-      <div class="container">
-        <h2 class="text-center mb-5">Blog & Teaching</h2>
-        <div class="row">
-          <!-- Blog posts and teaching materials will go here -->
-        </div>
-      </div>
-    </section>
+  <section id="more">
+    <h2 class="h">Positions &amp; Achievements</h2>
+    <ul class="plain">
+      <li><strong>Freelance Gen AI Engineer</strong> — delivered custom AI (CV, NLP, Gen AI) automation for international clients, $1000+ earned, 5-star rating. <span class="when">2026 – Present</span></li>
+      <li><strong>Head, E&amp;R Robotics Club, IIT Goa</strong> — built line-follower robots, RC planes, and sub-100g swarm drones. <span class="when">2022 – 2023</span></li>
+      <li><strong>Student Representative</strong> — represented the Batch of 2020 to the IIT Goa Undergraduate Committee. <span class="when">2020 – 2024</span></li>
+      <li><strong>JEE Advanced AIR 3858</strong>; JEE Mains 99.2 percentile. <span class="when">2020</span></li>
+      <li><strong>1st Place</strong>, IIT Goa Coding Contest (Game of Codes); <strong>3rd Place</strong>, IIT Goa IIC Virtual Lab Hackathon. <span class="when">2023, 2021</span></li>
+    </ul>
+  </section>
 
-    <!-- Certificates Section -->
-    <section class="section" id="certificates">
-      <div class="container">
-        <h2 class="text-center mb-5">Certificates</h2>
-        <div class="row">
-          <!-- Certificate cards will go here -->
-        </div>
-      </div>
-    </section>
+  <section id="contact" style="border-bottom:none;">
+    <h2 class="h">Contact</h2>
+    <p style="color:var(--ink-soft); max-width:52ch;">Best way to reach me is email — happy to talk research, robotics builds, or freelance work.</p>
+    <div class="links">
+      <a class="primary" href="mailto:natekaranish@gmail.com">natekaranish@gmail.com</a>
+      <a href="mailto:anishsanishungry@gmail.com">anishsanishungry@gmail.com</a>
+      <a href="https://www.linkedin.com/in/anish-natekar-2667b61b0/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/anish-natekar" target="_blank">GitHub</a>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="section bg-light" id="contact">
-      <div class="container">
-        <h2 class="text-center mb-5">Let's Work Together</h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <p class="text-center mb-4">
-                  Available for freelance projects at $20/hour on Upwork.<br>
-                  Specialized in AI development, robotics, and hardware projects.
-                </p>
-                <div class="d-grid gap-2">
-                  <a href="https://www.upwork.com/freelancers/~014b054a6d79bdc8de" class="btn btn-dark" target="_blank">Hire Me on Upwork</a>
-                  <a href="mailto:your.email@example.com" class="btn btn-outline-dark">Send Email</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</main>
 
-    <footer class="py-4 text-center bg-dark text-white">
-      <div class="container">
-        <p class="mb-0">&copy; 2024 Anish Natekar. All rights reserved.</p>
-      </div>
-    </footer>
+<footer>
+  <span>&copy; 2026 Anish Natekar</span>
+  <span><a href="https://github.com/anish-natekar/anish-natekar.github.io" target="_blank">Source</a></span>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
 </html>
