@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anish Natekar</title>
-<meta name="description" content="Anish Natekar — Research Engineer, Generative AI at TCS Research. Multi-agent LLM systems, agentic AI, robotics & drones.">
+<meta name="description" content="Anish Natekar — Backend + AI Engineer at GreenSage AI. LLM systems, retrieval, on-device AI, robotics, and drones.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -55,11 +55,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
     height: 58px;
     max-width: 920px;
   }
 
   header.nav .brand {
+    flex: 0 0 auto;
     font-weight: 600;
     text-decoration: none;
     letter-spacing: -0.01em;
@@ -69,7 +72,15 @@
     text-decoration: none;
     color: var(--ink-soft);
     font-size: 0.92rem;
-    margin-left: 22px;
+    margin-left: 0;
+  }
+
+  header.nav nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   header.nav nav a:hover { color: var(--accent); }
@@ -454,17 +465,6 @@
     height: 28px;
   }
 
-  .root-node span {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 999px;
-    background: var(--ink);
-    color: var(--bg);
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.01em;
-  }
-
   .domain-node {
     display: inline-block;
     white-space: nowrap;
@@ -504,7 +504,6 @@
       text-align: left;
     }
     .skill-tree li::before, .skill-tree li::after, .skill-tree ul::before { display: none; }
-    .root-node { margin-bottom: 6px; }
     .domain-node { margin: 18px 0 8px; }
     .cat-node { margin: 14px 0 6px; }
     .skill-tree ul.categories { padding-top: 0; }
@@ -541,7 +540,7 @@
     .hero img { width: 100px; height: 100px; }
     .grid-2 { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr 1fr; }
-    header.nav nav a { margin-left: 14px; }
+    header.nav nav { gap: 14px; }
     .hero h1 { font-size: 2.1rem; }
   }
 </style>
@@ -551,9 +550,10 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Anish Natekar</a>
-    <nav>
+    <nav aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
       <a href="#videos">Videos</a>
@@ -575,9 +575,8 @@
         Outside work I design and build drones and robotics from the PCB up.
       </p>
       <div class="links">
-        <a class="primary" href="assets/Anish_Natekar_Resume_latest.pdf" target="_blank">Resume</a>
         <a href="https://www.linkedin.com/in/anish-natekar-2667b61b0/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/anish-natekar" target="_blank">GitHub</a>
+        <a class="primary" href="https://github.com/anish-natekar" target="_blank">GitHub</a>
         <a href="https://www.youtube.com/@anishnatekar7283" target="_blank">YouTube</a>
       </div>
     </div>
@@ -678,11 +677,17 @@
         </ul>
       </div>
 
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="h">Education</h2>
+    <div class="timeline">
       <div class="t-item">
         <div class="entry-head">
           <span class="who">
             <img class="org-icon" src="assets/logos/iitgoa.png" alt="IIT Goa logo">
-            <span class="title">Education <span class="org">— B.Tech, Computer Science &amp; Engineering, IIT Goa</span></span>
+            <span class="title">B.Tech, Computer Science &amp; Engineering <span class="org">— IIT Goa</span></span>
           </span>
           <span class="when">2020 – 2024</span>
         </div>
@@ -690,7 +695,6 @@
           <li>CGPA 8.35/10. Coursework: Machine Learning, Artificial Intelligence, Deep Learning, Operating Systems, Computer Networks.</li>
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -737,7 +741,7 @@
 
       <div class="card">
         <h3>PicoW Copter</h3>
-        <div class="meta">66★ on GitHub · Featured in <a href="https://www.tomshardware.com/news/raspberry-pi-pico-w-copter" target="_blank" rel="noopener">Tom's Hardware</a></div>
+        <div class="meta">Open-source hardware · Featured in <a href="https://www.tomshardware.com/news/raspberry-pi-pico-w-copter" target="_blank" rel="noopener">Tom's Hardware</a></div>
         <p>Open-source, sub-100g WiFi-controlled quadcopter — full-stack build with custom PCB, firmware, and a Flutter control app, flown over UDP on a Raspberry Pi Pico W.</p>
         <a class="out" href="https://github.com/anish-natekar/PicoW_Copter" target="_blank">View on GitHub →</a>
         &nbsp;·&nbsp;
@@ -768,7 +772,7 @@
     <p class="section-lead">
       From my college years building and flying drones and RC planes — build logs, flight tests, and
       simulation work from my
-      <a href="https://www.youtube.com/@anishnatekar7283" target="_blank">YouTube channel</a> (197 subscribers).
+      <a href="https://www.youtube.com/@anishnatekar7283" target="_blank">YouTube channel</a>.
     </p>
     <div class="video-grid">
 
@@ -808,7 +812,6 @@
   <section id="skills">
     <h2 class="h">Skills</h2>
     <div class="skill-tree">
-      <div class="root-node"><span>Skills</span></div>
       <ul class="domains">
         <li>
           <div class="domain-node">AI &amp; Machine Learning</div>
